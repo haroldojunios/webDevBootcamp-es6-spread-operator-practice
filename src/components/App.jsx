@@ -22,7 +22,13 @@ function App() {
       </div>
       <div>
         <ul>
-          {items.map(item => <ToDoItem key={item} item={item} />)}
+          {items.map((item, i) =>
+            <ToDoItem
+              key={i}
+              id={i}
+              item={item}
+              onChecked={id => console.log(id)}
+            />)}
         </ul>
       </div>
     </div>
