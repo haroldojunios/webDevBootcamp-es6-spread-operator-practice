@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 
-const items = [];
-
 function App() {
   const [item, setItem] = useState("");
+  const [items, setItems] = useState([]);
 
   return (
     <div className="container">
@@ -16,7 +15,7 @@ function App() {
           onChange={event => setItem(event.target.value)}
         />
         <button
-          onClick={() => { items.push(item); setItem("") }}>
+          onClick={() => { setItems(prevItems => [...prevItems, item]); setItem("") }}>
           <span>Add</span>
         </button>
       </div>
