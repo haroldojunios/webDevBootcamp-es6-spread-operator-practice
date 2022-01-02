@@ -27,7 +27,10 @@ function App() {
               key={i}
               id={i}
               item={item}
-              onChecked={id => console.log(id)}
+              onChecked={id =>
+                setItems(prevItems =>
+                  prevItems.filter((item, i) => i !== id)
+                )}
             />)}
         </ul>
       </div>
