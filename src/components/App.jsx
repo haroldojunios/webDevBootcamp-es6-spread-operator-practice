@@ -11,7 +11,11 @@ function App() {
       <div className="heading">
         <h1>To-Do List</h1>
       </div>
-      <InputArea />
+      <InputArea
+        inputText={item}
+        handleChange={event => setItem(event.target.value)}
+        addItem={() => { setItems(prevItems => [...prevItems, item]); setItem("") }}
+      />
       <div>
         <ul>
           {items.map((item, i) =>
