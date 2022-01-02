@@ -16,13 +16,13 @@ function App() {
           onChange={event => setItem(event.target.value)}
         />
         <button
-          onClick={() => { items.push(item); setItem(""); console.log(items)}}>
+          onClick={() => { items.push(item); setItem("") }}>
           <span>Add</span>
         </button>
       </div>
       <div>
         <ul>
-          <li>A Item </li>
+          {items.map(item => <li key={item}>{item}</li>)}
         </ul>
       </div>
     </div>
