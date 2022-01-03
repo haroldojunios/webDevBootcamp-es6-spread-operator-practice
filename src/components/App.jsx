@@ -3,7 +3,7 @@ import ToDoItem from "./ToDoItem";
 import InputArea from "./InputArea";
 
 function App() {
-  const [item, setItem] = useState("");
+
   const [items, setItems] = useState([]);
 
   return (
@@ -12,9 +12,7 @@ function App() {
         <h1>To-Do List</h1>
       </div>
       <InputArea
-        inputText={item}
-        handleChange={event => setItem(event.target.value)}
-        addItem={() => { setItems(prevItems => [...prevItems, item]); setItem("") }}
+        addItem={(item) => { setItems(prevItems => [...prevItems, item]) }}
       />
       <div>
         <ul>
